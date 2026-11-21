@@ -18,19 +18,27 @@ if errorlevel 1 (
 )
 
 if not exist "node_modules\express" (
-  echo Dependencies are missing. Installing them now...
+  echo Installing server dependencies...
   call npm install
-  if errorlevel 1 (
-    echo Dependency installation failed.
-    pause
-    exit /b 1
-  )
+  if errorlevel 1 goto failed
 )
 
-echo Starting Finova at http://localhost:4173
-call npm start
-if errorlevel 1 (
-  echo The server stopped with an error. Check the output above.
-  pause
+if not exist "data\finance-data.xlsx" (
+  echo Creating the Excel workbook and initial sheets...
+  call npm run init-data
+  if errorlevel 1 goto failed
 )
+
+echo Starting Finova. Your browser will open automatically.
+start "Finova dashboard" /B powershell -NoProfile -WindowStyle Hidden -Command "Start-Sleep -Seconds 2; Start-Process 'http://localhost:4173'"
+call npm start
+if errorlevel 1 goto failed
 endlocal
+exit /b 0
+
+:failed
+echo.
+echo Setup or server startup failed. Read the error above, then try again.
+pause
+endlocal
+exit /b 1

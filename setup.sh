@@ -23,6 +23,9 @@ fi
 echo "Installing finance dashboard dependencies..."
 npm install
 
+echo "Creating the Excel workbook and initial sheets..."
+npm run init-data
+
 echo
-echo "Setup complete. Start the server with: npm start"
-echo "On Windows, you can also double-click start.bat."
+echo "Setup complete. On Windows, double-click start.bat to start the server and open the dashboard."
+echo "On macOS/Linux, run: npm start"
