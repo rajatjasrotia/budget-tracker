@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Finova — Finance Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="Finova home">
+      <span class="brand-mark"><span></span><span></span></span>
+      <span>finova</span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-item active" href="#overview" aria-current="page">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+        <span>Overview</span>
+      </a>
+      <a class="nav-item" href="#transactions">
+        <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="7" cy="7" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="10" cy="17" r="1"/></svg>
+        <span>Transactions</span>
+      </a>
+      <a class="nav-item" href="#budgets">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M8.5 9.5h5a2.5 2.5 0 0 1 0 5h-3a2.5 2.5 0 0 1 0-5"/></svg>
+        <span>Budgets</span>
+      </a>
+      <a class="nav-item" href="#analytics">
+        <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        <span>Analytics</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <a class="nav-item" href="#settings">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-2.6V20a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L7.6 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 6.4 14H6v-2.6h.4A1.7 1.7 0 0 0 8 10.4a1.7 1.7 0 0 0-.3-1.9L7.6 8l1.8-1.8.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 12.4 5v-.2H15V5a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 8l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2V14H21a1.7 1.7 0 0 0-1.6 1z"/></svg>
+        <span>Settings</span>
+      </a>
+      <button class="profile" type="button" aria-label="Open profile">
+        <span class="avatar">AJ</span>
+        <span class="profile-copy"><strong>Alex Johnson</strong><small>alex@finova.com</small></span>
+        <span class="chevron">›</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main" id="overview">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Monday, 24 June</p>
+        <h1>Good morning, Alex</h1>
+      </div>
+      <div class="actions">
+        <button class="icon-button" type="button" aria-label="Notifications">
+          <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+          <span class="notification-dot"></span>
+        </button>
+        <button class="primary-button" id="addTransaction" type="button"><span>+</span> Add transaction</button>
+      </div>
+    </header>
+
+    <section class="summary-grid" aria-label="Financial summary">
+      <article class="summary-card balance-card">
+        <div class="card-heading"><span>Total balance</span><button class="more" aria-label="Balance options">•••</button></div>
+        <strong class="metric" id="totalBalance">$24,562.00</strong>
+        <div class="trend positive"><span>↗</span> 8.2% <small>from last month</small></div>
+      </article>
+      <article class="summary-card">
+        <div class="card-heading"><span>Income</span><span class="metric-icon income-icon"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+        <strong class="metric" id="totalIncome">$8,420.00</strong>
+        <div class="trend positive"><span>↗</span> 5.4% <small>from last month</small></div>
+      </article>
+      <article class="summary-card">
+        <div class="card-heading"><span>Expenses</span><span class="metric-icon expense-icon"><svg viewBox="0 0 24 24"><path d="M17 7 7 17M16 17H7V8"/></svg></span></div>
+        <strong class="metric" id="totalExpenses">$3,284.00</strong>
+        <div class="trend negative"><span>↘</span> 2.1% <small>from last month</small></div>
+      </article>
+      <article class="summary-card">
+        <div class="card-heading"><span>Savings</span><span class="metric-icon saving-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9 10h4.5a2 2 0 0 1 0 4H9"/></svg></span></div>
+        <strong class="metric" id="totalSavings">$5,136.00</strong>
+        <div class="trend positive"><span>↗</span> 12.6% <small>from last month</small></div>
+      </article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel cash-flow" id="analytics">
+        <div class="panel-header">
+          <div><h2>Cash flow</h2><p>Income and expenses over time</p></div>
+          <select id="period" aria-label="Cash flow period"><option>Last 6 months</option><option>Last 12 months</option></select>
+        </div>
+        <div class="chart-legend"><span><i class="income-dot"></i>Income</span><span><i class="expense-dot"></i>Expenses</span></div>
+        <div class="chart" aria-label="Income and expense chart">
+          <div class="y-axis"><span>$10k</span><span>$8k</span><span>$6k</span><span>$4k</span><span>$2k</span><span>$0</span></div>
+          <div class="plot">
+            <div class="grid-line"></div><div class="grid-line"></div><div class="grid-line"></div><div class="grid-line"></div><div class="grid-line"></div>
+            <svg class="line-chart" viewBox="0 0 600 230" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="incomeFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0b84b" stop-opacity=".2"/><stop offset="1" stop-color="#f0b84b" stop-opacity="0"/></linearGradient></defs>
+              <path class="income-area" d="M0 178 C50 168,70 148,120 152 C175 156,190 120,240 125 C290 130,315 92,360 98 C420 105,430 72,480 78 C530 84,555 52,600 58 L600 230 L0 230 Z"/>
+              <path class="income-line" d="M0 178 C50 168,70 148,120 152 C175 156,190 120,240 125 C290 130,315 92,360 98 C420 105,430 72,480 78 C530 84,555 52,600 58"/>
+              <path class="expense-line" d="M0 198 C60 190,70 182,120 186 C180 190,200 168,240 172 C300 176,320 158,360 164 C420 170,440 145,480 150 C535 156,560 135,600 142"/>
+              <circle class="chart-point" cx="480" cy="78" r="5"/>
+            </svg>
+            <div class="x-axis"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel budget-panel" id="budgets">
+        <div class="panel-header"><div><h2>Monthly budget</h2><p>June 2026</p></div><button class="more" aria-label="Budget options">•••</button></div>
+        <div class="budget-ring">
+          <svg viewBox="0 0 180 180">
+            <circle class="ring-track" cx="90" cy="90" r="72"/>
+            <circle class="ring-progress" cx="90" cy="90" r="72"/>
+          </svg>
+          <div class="ring-copy"><strong id="budgetPercent">62%</strong><span>spent</span></div>
+        </div>
+        <div class="budget-total"><strong id="budgetSpent">$3,284</strong><span> of $5,300</span></div>
+        <div class="budget-footer"><span><i class="spent-dot"></i>Spent</span><strong id="budgetRemaining">$2,016 left</strong></div>
+      </article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel transactions-panel" id="transactions">
+        <div class="panel-header"><div><h2>Recent transactions</h2><p>Your latest activity</p></div><a href="#all-transactions">View all <span>→</span></a></div>
+        <div class="transaction-list" id="transactionList">
+          <div class="transaction"><span class="transaction-icon shopping">🛍</span><span class="transaction-info"><strong>Apple Store</strong><small>Shopping · Jun 24</small></span><span class="transaction-amount expense">−$129.00</span></div>
+          <div class="transaction"><span class="transaction-icon salary">↗</span><span class="transaction-info"><strong>Salary deposit</strong><small>Income · Jun 23</small></span><span class="transaction-amount income">+$4,200.00</span></div>
+          <div class="transaction"><span class="transaction-icon food">♨</span><span class="transaction-info"><strong>Blue Bottle Coffee</strong><small>Food · Jun 22</small></span><span class="transaction-amount expense">−$18.50</span></div>
+          <div class="transaction"><span class="transaction-icon transport">🚕</span><span class="transaction-info"><strong>Uber</strong><small>Transport · Jun 21</small></span><span class="transaction-amount expense">−$32.80</span></div>
+        </div>
+      </article>
+
+      <article class="panel spending-panel">
+        <div class="panel-header"><div><h2>Spending by category</h2><p>June 2026</p></div><button class="more" aria-label="Category options">•••</button></div>
+        <div class="category-list">
+          <div class="category"><span class="category-name"><i class="housing"></i>Housing</span><div class="category-bar"><span style="width:72%" class="housing"></span></div><strong>$1,350</strong></div>
+          <div class="category"><span class="category-name"><i class="food"></i>Food</span><div class="category-bar"><span style="width:49%" class="food"></span></div><strong>$920</strong></div>
+          <div class="category"><span class="category-name"><i class="transport"></i>Transport</span><div class="category-bar"><span style="width:31%" class="transport"></span></div><strong>$580</strong></div>
+          <div class="category"><span class="category-name"><i class="shopping"></i>Shopping</span><div class="category-bar"><span style="width:23%" class="shopping"></span></div><strong>$434</strong></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header"><div><p class="eyebrow">New entry</p><h2 id="modalTitle">Add transaction</h2></div><button class="close-button" id="closeModal" type="button" aria-label="Close">×</button></div>
+      <form id="transactionForm">
+        <label>Type<select id="type" required><option value="expense">Expense</option><option value="income">Income</option></select></label>
+        <label>Description<input id="description" type="text" placeholder="e.g. Grocery store" required></label>
+        <label>Amount<input id="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required></label>
+        <label>Category<select id="category"><option>Food</option><option>Shopping</option><option>Housing</option><option>Transport</option><option>Salary</option><option>Other</option></select></label>
+        <button class="primary-button modal-submit" type="submit">Add transaction</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
