@@ -4,7 +4,9 @@
   "private": true,
   "description": "A household finance dashboard with an Excel workbook backend.",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "init-data": "node scripts/init-workbook.js",
+    "setup": "npm install && npm run init-data"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
